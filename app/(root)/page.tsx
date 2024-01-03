@@ -1,12 +1,24 @@
-import { Button } from "@/components/ui/button";
-import { UserButton } from "@clerk/nextjs";
+"use client"
+
+import { useStoreModal } from "@/hooks/use-store-modal";
+import { useEffect } from "react";
+
 
 const SetupPage = () => {
+    const onOpen = useStoreModal((state) => state.onOpen)
+    const isOpen = useStoreModal((state) => state.isOpen)
 
+    console.log(isOpen);
+    
+    useEffect(() => {
+        if (!isOpen) {
+            onOpen()
+        }
+    }, [isOpen, onOpen])
     // route grouping
     return (
         <div className="p-4">
-            <UserButton afterSignOutUrl="/" />
+           Root man
         </div>
     )
 } 
