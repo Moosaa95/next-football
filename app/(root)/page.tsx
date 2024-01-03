@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
 
-const Setup = () => {
+const SetupPage = () => {
 
     // route grouping
     return (
-        <div>
-            <Button>Click mw</Button>
+        <div className="p-4">
+            <UserButton afterSignOutUrl="/" />
         </div>
     )
 } 
 
-export default Setup;
+export default SetupPage;
